@@ -84,4 +84,6 @@ group :test do
   gem "webdrivers"
   gem "rspec-rails"
   gem "rspec"
+
+  gem "factory_bot_rails"
 end

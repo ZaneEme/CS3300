@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[ create edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new create edit update destroy ]
 
   def after_sign_in_path_for(resource)
     dashboard_index_path
