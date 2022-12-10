@@ -1,9 +1,12 @@
-<h1>New project</h1>
+<body>
+  <div class="container w-25 md-3 text-white">
+    <h1>New project</h1>
 
-<%= render "form", project: @project %>
+    <%= render "form", project: @project %>
 
-<br>
+    <br>
 
-<div>
-  <%= link_to "Back to projects", projects_path %>
-</div>
+    <div>
+      <%= link_to "Back to projects", projects_path, class: 'btn btn-secondary' %>
+    </div>
+</body>

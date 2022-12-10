@@ -1,14 +1,36 @@
-<p style="color: green"><%= notice %></p>
+<body>
+  <div class="container text-white">
+      <h1>
+        Projects
+        <a class="btn btn-primary" href="<%= new_project_path %>">New Project</a>
+      </h1>
 
-<h1>Projects</h1>
-
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New project", new_project_path %>
+    <div class="row row-cols-3">
+      <% @projects.each do |project| %>
+        <div class="col">
+          <div id="<%= dom_id project %>">
+            <h2>
+              <strong>Title:</strong>
+              <%= project.title %>
+            </h2>
+          
+            <p>
+              <strong>Description:<br></strong>
+              <%= project.description[0,100] %>...
+            </p>
+          </div>
+          <div class="container">
+            <div class="row row-cols-auto">
+              <div class="col">
+                <%= link_to "Show", project_path(project), class: "btn btn-primary" %>
+              </div>
+              <div class="col">
+                <%= link_to "Edit", edit_project_path(project), class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
